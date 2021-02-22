@@ -1,0 +1,33 @@
+<div class="container">
+<section class="section">
+  <h1 class="title">Payment Lists</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Holder's Name</th>
+        <th>Card Number</th>
+        <th>Card Date</th>
+        <th>CVV</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let paymentList of (paymentList$ | async)">
+        <th>{{paymentList.name}}</th>
+        <td>{{paymentList.cardNumber}}</td>
+        <td>{{paymentList.expiration}}</td>
+        <td>{{paymentList.securityCode}}</td>
+        <td>{{paymentList.amount}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="section">
+  <div class="buttons">
+    <button class="button is-link" [routerLink]="['/payment']">Make Payment</button>
+  </div>
+</section>
+</div>

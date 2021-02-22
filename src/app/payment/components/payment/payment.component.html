@@ -1,0 +1,35 @@
+<section class="section">
+
+<div class="heading">
+  <h1>Credit Card Information</h1>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <app-card [name]="paymentForm.get('name')?.value" [cardNumber]="paymentForm.get('cardNumber')?.value"
+      [expiration]="paymentForm.get('expiration')?.value"></app-card>
+  </div>
+
+  <div class="">
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm.value)">
+      <app-input label="Name" [control]="paymentForm.get('name')"></app-input>
+      <app-input label="Card Number" [control]="paymentForm.get('cardNumber')"></app-input>
+
+      <div class="columns">
+        <div class="column">
+          <app-input label="Expiration (MM/YY)" [control]="paymentForm.get('expiration')"></app-input>
+        </div>
+        <div class="column">
+          <app-input label="Security Code" [control]="paymentForm.get('securityCode')"></app-input>
+        </div>
+      </div>
+      <app-input label="Amount" type="number" [control]="paymentForm.get('amount')"></app-input>
+
+      <div class="buttons">
+        <button class="button is-primary" [disabled]="paymentForm.invalid" type="submit">Submit</button>
+        <button class="button is-warning" type="button" (click)="onResetClick()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+</section>

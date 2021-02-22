@@ -1,0 +1,12 @@
+{
+  "payments": [
+    {
+      "name": "Elvis Iria",
+      "cardNumber": "3455454545454346",
+      "expiration": "03/05",
+      "securityCode": "ert",
+      "amount": "500",
+      "id": 1
+    }
+  ]
+}
